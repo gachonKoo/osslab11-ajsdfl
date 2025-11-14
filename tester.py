@@ -2,26 +2,35 @@
 import sys
 import geo.utils as utils
 
-# --- 1. a와 b 값 읽어오기 ---
-line1_raw = sys.stdin.readline() 
+line1_raw = sys.stdin.readline()
 
-# line1_raw가 비어있지 않은지 확인 (오류 방지)
-if line1_raw and len(line1_raw.split()) >= 2:
-    line1_parts = line1_raw.split()
-    a = int(line1_parts[0])
-    b = int(line1_parts[1])
+if line1_raw:
+    parts1 = line1_raw.split()
     
-    # --- 2. r 값 읽어오기 ---
-    line2_raw = sys.stdin.readline()
+    if len(parts1) == 3:
+        a = int(parts1[0])
+        b = int(parts1[1])
+        r = int(parts1[2])
     
-    # line2_raw가 비어있지 않은지 확인 (오류 방지)
-    if line2_raw and len(line2_raw.split()) >= 1:
-        line2_parts = line2_raw.split()
-        r = int(line2_parts[0])
-
-        # --- 3. 두 값이 모두 정상일 때, 두 개의 결과를 모두 출력 ---
         c = utils.pythagoras(a, b)
         print('c', c)
         
         area = utils.circle(r)
         print('area =', area)
+
+    elif len(parts1) == 2:
+        a = int(parts1[0])
+        b = int(parts1[1])
+
+        line2_raw = sys.stdin.readline()
+        
+        if line2_raw:
+            parts2 = line2_raw.split()
+            if len(parts2) == 1:
+                r = int(parts2[0])
+                
+                c = utils.pythagoras(a, b)
+                print('c', c)
+                
+                area = utils.circle(r)
+                print('area =', area)
