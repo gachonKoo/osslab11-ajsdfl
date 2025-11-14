@@ -10,9 +10,9 @@ if line_raw:
         a = int(parts[0])
         b = int(parts[1])
         r = int(parts[2])
-
+        
         c = utils.pythagoras(a, b)
         print('c', c)
-
+        
         area = utils.circle(r)
         print('area =', area)
