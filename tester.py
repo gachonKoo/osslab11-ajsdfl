@@ -1,16 +1,21 @@
-
-import geo.utils as utils
 import sys
+import geo.utils as utils
 
-line1 = sys.stdin.readline().split()
-a = int(line1[0])
-b = int(line1[1])
+line1_raw = sys.stdin.readline() 
 
-line2 = sys.stdin.readline().split()
-r = int(line2[0])
+if line1_raw and len(line1_raw.split()) >= 2:
+    line1_parts = line1_raw.split()
+    a = int(line1_parts[0])
+    b = int(line1_parts[1])
+    
+    line2_raw = sys.stdin.readline()
+    
+    if line2_raw and len(line2_raw.split()) >= 1:
+        line2_parts = line2_raw.split()
+        r = int(line2_parts[0])
 
-c = utils.pythagoras(a, b)
-print('c', c)
-
-area = utils.circle(r)
-print('area =', area)
+        c = utils.pythagoras(a, b)
+        print('c', c)
+        
+        area = utils.circle(r)
+        print('area =', area)
