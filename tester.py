@@ -1,33 +1,14 @@
-# tester.py
-import sys
 import geo.utils as utils
 
-line1_raw = sys.stdin.readline()
+# calculate the length of hypotenuse(c) when a=3 and b=4
+a, b = 3, 4
+c = utils.pythagoras(a, b)
+print('c', c)
 
-if line1_raw:
-    parts1 = line1_raw.split()
-    
-    if len(parts1) == 3:
-        a = int(parts1[0])
-        b = int(parts1[1])
-        r = int(parts1[2])
-    
-        c = utils.pythagoras(a, b)
-        print('c', c)
-        
-        area = utils.circle(r)
-        print('area =', area)
-
-    elif len(parts1) == 2:
-        a = int(parts1[0])
-        b = int(parts1[1])
-
-        line2_raw = sys.stdin.readline()
-        
-        if line2_raw:
-            parts2 = line2_raw.split()
-            if len(parts2) == 1:
-                r = int(parts2[0])
+# calculate the area of circle with radius r = 10
+r = 10
+area = utils.circle(r)
+print('area =', area)
                 
                 c = utils.pythagoras(a, b)
                 print('c', c)
