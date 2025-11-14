@@ -1,4 +1,3 @@
-# geo/utils.py
 import math
 
 def pythagoras(a, b):
